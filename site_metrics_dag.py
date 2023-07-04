@@ -11,7 +11,7 @@ import requests
 #Добавляем переменную окружения
 ENV_ID = os.environ.get("SYSTEM_TESTS_ENV_ID")
 
-DAG_ID = "LOAD_SITE_METRICS_v1"
+DAG_ID = "site_metrics_dag"
 default_args = {
     'owner': 'goryachev_v',
     'email': "goryachev_v@xxx.ru",
