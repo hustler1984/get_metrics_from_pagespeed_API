@@ -1,0 +1,6 @@
+CREATE OR REPLACE TABLE test.site_metrics (
+    DDATE                                   DateTime64(0, 'Etc/UTC'),
+    URL                                     String,
+    METRICS                                 String,
+    VALUE                                   Float64
+    )Engine = MergeTree() order by (DDATE, URL, METRICS)  
