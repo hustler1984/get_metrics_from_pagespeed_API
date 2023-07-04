@@ -4,6 +4,17 @@ DAG for getting Metrics by PageSpeed Insights API
 Пример ![DAG](https://github.com/hustler1984/get_metrics_from_pagespeed_API/blob/main/site_metrics_dag.py) файла для Airflow, который собирает метрики TBT и LCP и кладёт их в ClickHouse, а также
 ![DDL](https://github.com/hustler1984/get_metrics_from_pagespeed_API/blob/main/DDL.txt) для создания в ClickHouse таблицы, хранящей значение метрик. 
 
+Структура:
+**DDATE** - дата и время(UTC) замера метрики
+
+**URL** - ссылки на интересующие страницы (взяты из ![файла](https://github.com/grimlyrosen/tests/blob/main/urllist.csv))
+
+**METRICS** - метрика качества (LCP или TBT)
+
+**VALUE** - значение метрики в мс
+
+![Иллюстрация к проекту](https://github.com/hustler1984/get_metrics_from_pagespeed_API/blob/main/site_metrics.jpg)
+
 ![Подробнее о PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started?hl=ru)
 
 1. Largest Contentful Paint (LCP) — как быстро загружается основной контент интернет-ресурса. Пользователь чувствует себя комфортно, если загрузка контента происходит за 2,5 секунды или быстрее.
@@ -21,3 +32,4 @@ DAG for getting Metrics by PageSpeed Insights API
 **clickhouse_driver версии 0.2.6**
 
 В планах добавить докер контейнер.
+
